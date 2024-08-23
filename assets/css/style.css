@@ -267,15 +267,6 @@ img {
   margin-bottom: var(--mb-2);
 }
 
-.about__img {
-  justify-self: center;
-}
-
-.about__img img {
-  width: 200px;
-
-  border-radius: .5rem;
-}
 
 /* ===== SKILLS =====*/
 .skills__container {
@@ -352,11 +343,7 @@ img {
 .work__container {
   row-gap: 2rem;
 }
-work__container bd-grid{
-    hover {
-  background-color: yellow;
-}
-}
+
 /*
 .top-part{
     backface-visibility: visible;
