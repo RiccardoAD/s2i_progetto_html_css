@@ -29,7 +29,7 @@ function scrollActive(){
     sections.forEach(current =>{
         const sectionHeight = current.offsetHeight
         const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id')
+         const sectionId = current.getAttribute('id')
 
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
@@ -54,18 +54,38 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
+//  contact emailjs
+const contactForm= document.getElementById("contact-form");
+const submitBtn = document.querySelector("#submit-btn");
+const nameInput = document.querySelector("#user_name");
+const emailInput = document.querySelector("#user_email");
+const messageInput = document.querySelector("#message");
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); 
-    // Parametri del servizio EmailJS
-    const serviceID = 'YOUR_SERVICE_ID';  // Sostituisci con il tuo Service ID
-    const templateID = 'YOUR_TEMPLATE_ID'; // Sostituisci con il tuo Template ID
-  
-    emailjs.sendForm(serviceID, templateID, this)
-      .then(function() {
-        alert('Email inviata con successo!');
-      }, function(error) {
-        console.error('Errore durante l\'invio dell\'email:', error);
-        alert('Si è verificato un errore durante l\'invio del messaggio. Riprova più tardi.');
-      });
-  });
+
+const publiKey ="o_tqfhwXbsdZzwJgX";
+const serviceID = "service_eipzrie";
+const templateID = "template_0lix61m";
+
+// inizializin email js 
+emailjs.init(publiKey);
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  submitBtn.innerText = "Sending...";
+  const inputFields={
+    name: nameInput.value,
+    email: emailInput.value,
+    message: messageInput.value
+  }
+
+   emailjs.send(serviceID, templateID, inputFields)
+   .then(() => {
+      submitBtn.innerText = "nessage sent successfully";
+      nameInput.value = "";
+      emailInput.value = "";
+      messageInput.value = ""; 
+   }, (error)=>{
+      console.log(error);
+      submitBtn.innerText = "Error, please try again";
+   });
+   });

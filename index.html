@@ -83,14 +83,8 @@
       <!--===== ABOUT =====-->
       <section class="about section" id="about">
         <h2 class="section-title">About</h2>
-
-        <div class="about__container bd-grid">
-          <div class="about__img">
-            <img src="assets/img/prefil1.jpg" alt="" />
-          </div>
-
-          <div>
-            <h2 class="about__subtitle">I'm Riccardo</h2>
+     <div class="about__container bd-grid">
+            <h2 class="about__subtitle">HI! i'am a junior web developer</h2>
             <p class="about__text">
               I'm attending a full-stack developer course, enhancing my skills with hands-on practice.<br />
               This is part of my journey to turn my interest in web design and development, which began during the
@@ -274,22 +268,7 @@
               >
             </div>
           </div>
-          <a href="" class="work__img"> </a>
-          <a href="" class="work__img">
-            <img src="assets/img/viz4.png" alt="" />
-          </a>
-          <a href="" class="work__img">
-            <img src="assets/img/viz5.png" alt="" />
-          </a>
-          <a href="" class="work__img">
-            <img src="assets/img/viz1.png" alt="" />
-          </a>
-          <a href="" class="work__img">
-            <img src="assets/img/viz2.png" alt="" />
-          </a>
-          <a href="" class="work__img">
-            <img src="assets/img/crc.png" alt="" />
-          </a>
+          
         </div>
       </section>
 
@@ -302,10 +281,10 @@
         <div class="contact__container bd-grid">
           <form id="contact-form" class="contact__form">
             <!--                    <form action="" class="contact__form">-->
-            <input type="text" placeholder="Name" class="contact__input" name="name" required />
-            <input type="email" placeholder="Email" class="contact__input" name="email" required />
-            <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-            <input type="submit" value="Submit" class="contact__button button" />
+            <input type="text" id="user_name" placeholder="Name" class="contact__input" name="name" required />
+            <input type="email" id="user_email" placeholder="Email" class="contact__input" name="email" required />
+            <textarea name="" id="message" cols="0" rows="10" class="contact__input"></textarea>
+            <input type="submit" value="Submit" id="submit-btn" class="contact__button button" />
           </form>
         </div>
       </section>
@@ -324,7 +303,15 @@
 
     <!--===== SCROLL REVEAL =====-->
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "o_tqfhwXbsdZzwJgX",
+        });
+      })();
+    </script>
 
     <!--===== MAIN JS =====-->
     <script src="./assets/js/index.js"></script>
