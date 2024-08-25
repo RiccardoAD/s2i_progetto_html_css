@@ -432,14 +432,20 @@ cursor: pointer;
   margin-bottom: var(--mb-4);
 }
 
-.contact__button {
-  display: block;
+.contact button{
   border: none;
-  outline: none;
-  font-size: var(--normal-font-size);
   cursor: pointer;
-  margin-left: auto;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #4a7af4;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1.2em;
+  transition: 0.3s;
+
+
 }
+
 
 /* ===== FOOTER =====*/
 .footer {
@@ -520,6 +526,9 @@ cursor: pointer;
     justify-items: center;
   }
 }
+
+
+
 
 @media screen and (min-width: 768px) {
   body {
